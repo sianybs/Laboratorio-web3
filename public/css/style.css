@@ -1,0 +1,144 @@
+
+		/* CSS Document */
+		:root{
+			--primary: #110C0CFF;
+			--light: #FFFFFF;
+			--grey1: #EEEEEE;
+			--grey2: #F0F1F1;
+			--orange: #D6731D;
+			--lblue1: #559EE0;
+			--lblue2: #B4C5E5;
+		}
+
+		*{
+			margin: 0;
+			padding: 0;
+			user-select: none;
+			box-sizing: border-box;
+		}
+
+		.header .navbar {
+			background-color: rgba(255,255,255,0.5) !important;
+		}
+
+		body{
+			padding-top: 70px;
+		}
+
+		.formatDiv{
+			width: 250px;
+			margin-left: auto;
+			margin-right: auto;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
+
+		.imgBlock{
+			height: 150px;
+			width: 150px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		.divAnuncio{
+			background-color: var(--light);
+			border: thin solid var(--lblue1);
+			border-radius: 5px;
+			box-shadow: 2px 2px 5px var(--lblue2);
+			float: left;
+			margin: 8px;
+			padding-top: 5px;
+			text-align: center;
+			width: 160px;
+		}
+		
+/* Colores generales del proyecto */
+
+body {
+    background-color: #faf8f3;
+    color: #30251f;
+}
+
+/* Barra de navegación superior */
+
+.navbar.bg-light {
+    background-color: #30251f !important;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: #f5eee4 !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .navbar-brand:hover {
+    color: #e9c78c !important;
+}
+
+.navbar .navbar-toggler {
+    background-color: #e9c78c;
+}
+
+/* Menús desplegables */
+
+.navbar .dropdown-menu {
+    background-color: #493527;
+}
+
+.navbar .dropdown-item {
+    color: #f5eee4;
+}
+
+.navbar .dropdown-item:hover {
+    background-color: #694b35;
+    color: #ffffff;
+}
+
+/* Títulos */
+
+h1, h2, h3, h4, h5 {
+    color: #493527;
+}
+
+/* Tarjetas de los signos */
+
+.divAnuncio {
+    background-color: #ffffff;
+    border: 1px solid #e9c78c !important;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(48, 37, 31, 0.12);
+}
+
+/* Botones */
+
+input[type="button"],
+button.btn-primary,
+.btn-primary {
+    background-color: #694b35;
+    border-color: #694b35;
+    color: white;
+    border-radius: 6px;
+    padding: 8px 18px;
+}
+
+input[type="button"]:hover,
+button.btn-primary:hover,
+.btn-primary:hover {
+    background-color: #493527;
+    border-color: #493527;
+}
+
+/* Campos de formularios */
+
+input:not([type="button"]),
+select,
+textarea {
+    border: 1px solid #cbbba7;
+    border-radius: 5px;
+    padding: 6px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline-color: #694b35;
+}

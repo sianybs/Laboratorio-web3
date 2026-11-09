@@ -1,0 +1,60 @@
+
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Colección de usuarios
+    match /datosUsuarios/{document} {
+
+      allow read: if request.auth != null;
+
+      allow create: if request.auth != null &&
+                       request.resource.data.idemp == request.auth.uid &&
+                       request.resource.data.usuario is string &&
+                       request.resource.data.email == request.auth.token.email &&
+                       request.resource.data.fecCreacion is timestamp &&
+                       request.resource.data.ultAcceso is timestamp;
+
+      allow update: if request.auth != null &&
+                       resource.data.idemp == request.auth.uid &&
+                       request.resource.data.diff(resource.data)
+                         .affectedKeys().hasOnly(['ultAcceso']) &&
+                       request.resource.data.ultAcceso is timestamp;
+
+      allow delete: if false;
+    }
+
+    // Colección de signos zodiacales
+    match /datosZodiaco/{document} {
+
+      allow read: if true;
+
+      // Registrar signos
+      allow create: if request.auth != null &&
+                       request.resource.data.posic is int &&
+                       request.resource.data.signo is string &&
+                       request.resource.data.rango is string &&
+                       request.resource.data.url is string &&
+                       request.resource.data.elemento in
+                         ['Fuego', 'Tierra', 'Aire', 'Agua'] &&
+                       request.resource.data.astro is string &&
+                       request.resource.data.piedra is string;
+
+      // Modificar signos existentes
+      allow update: if request.auth != null &&
+                       request.resource.data.posic is int &&
+                       request.resource.data.signo is string &&
+                       request.resource.data.rango is string &&
+                       request.resource.data.url is string &&
+                       request.resource.data.elemento in
+                         ['Fuego', 'Tierra', 'Aire', 'Agua'] &&
+                       request.resource.data.astro is string &&
+                       request.resource.data.piedra is string;
+
+      // No permitir eliminar signos
+      allow delete: if false;
+    }
+
+  }
+}

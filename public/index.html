@@ -1,0 +1,195 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Visualization environment -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Control environment web application -->
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+
+    <!-- Custom decoration -->
+    <title>Inicio - Zodiaco</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- References Firebase libraries -->
+    <script defer src="/__/firebase/13.2.0/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/13.2.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/13.2.0/firebase-firestore-compat.js"></script>
+
+    <!-- initialized firebase object -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <!-- calling user authentication functions -->
+    <script defer src="js/users/islogin.js"></script>
+
+    <script>
+        window.addEventListener('load', () => {
+            validar();
+        });
+    </script>
+
+    <style>
+        body {
+            background-color: #faf8f3;
+        }
+
+        .menu-lateral {
+            background-color: #30251f;
+            min-height: 100vh;
+            padding: 35px 22px;
+        }
+
+        .menu-lateral h3 {
+            color: #e9c78c;
+            margin-bottom: 35px;
+        }
+
+        .menu-lateral a {
+            display: block;
+            color: #f5eee4;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 6px;
+        }
+
+        .menu-lateral a:hover {
+            background-color: #554237;
+            color: white;
+        }
+
+        .menu-lateral .submenu {
+            padding-left: 18px;
+        }
+
+        .contenido-inicio {
+            padding: 45px 25px;
+            text-align: center;
+        }
+
+        .contenido-inicio h1 {
+            color: #493527;
+            margin-bottom: 12px;
+        }
+
+        .contenido-inicio p {
+            color: #6d5a4b;
+            margin-bottom: 25px;
+        }
+
+        .imagen-portada {
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin: 0 auto 25px;
+            border-radius: 5px;
+        }
+
+        .btn-signos {
+            background-color: #694b35;
+            color: white;
+            padding: 10px 25px;
+        }
+
+        .btn-signos:hover {
+            background-color: #493527;
+            color: white;
+        }
+
+        @media (max-width: 767px) {
+            .menu-lateral {
+                min-height: auto;
+                padding: 20px;
+            }
+
+            .menu-lateral h3 {
+                margin-bottom: 15px;
+            }
+
+            .contenido-inicio {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Menú lateral -->
+            <header class="col-md-3 col-lg-2 menu-lateral">
+                <h3>Zodiaco</h3>
+
+                <nav>
+                    <a href="index.html">Inicio</a>
+
+                    <a href="#menuHoroscopo"
+                       data-bs-toggle="collapse"
+                       role="button"
+                       aria-expanded="true">
+                        Horóscopo
+                    </a>
+
+                    <div class="collapse show submenu" id="menuHoroscopo">
+                        <a href="lista.html">Listar Signos</a>
+                        <a href="agregar.html">Agregar Signo</a>
+                    </div>
+
+                    <a href="#menuUsuarios"
+                       data-bs-toggle="collapse"
+                       role="button"
+                       aria-expanded="false">
+                        Usuarios
+                    </a>
+
+                    <div class="collapse submenu" id="menuUsuarios">
+                        <a href="registrar.html">
+                            Registrar nuevo usuario
+                        </a>
+                    </div>
+
+                    <a href="#" onclick="salir(); return false;">
+                        Cerrar sesión
+                    </a>
+                </nav>
+            </header>
+
+            <!-- Contenido principal -->
+            <main class="col-md-9 col-lg-10 contenido-inicio">
+
+                <h1>Bienvenido al Zodiaco</h1>
+
+                <p>
+                    Descubrí los signos zodiacales y sus características.
+                </p>
+
+                <img
+                    src="imagenes/00_Portada.png"
+                    alt="Portada del Zodiaco"
+                    class="imagen-portada">
+
+                <a href="lista.html" class="btn btn-signos">
+                    Ver signos zodiacales
+                </a>
+
+            </main>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+</body>
+</html>
